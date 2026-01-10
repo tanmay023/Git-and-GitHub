@@ -37,8 +37,8 @@ It is process of integrating from one branch into another branch. Allows us to c
 Cloning a repository means creating local copy of remote repository. It includes all files, branches, and commit history.
 
 6. **Pull and Push** <br>
--***Pull***: Feches updates from remote repository and integrates them into our local repository.
--***Push***: Sends our local changes to remote repository, and makes them available to others.
+- ***Pull***: Feches updates from remote repository and integrates them into our local repository.
+- ***Push***: Sends our local changes to remote repository, and makes them available to others.
 
 
   
