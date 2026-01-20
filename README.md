@@ -40,5 +40,20 @@ Cloning a repository means creating local copy of remote repository. It includes
 - ***Pull***: Feches updates from remote repository and integrates them into our local repository.
 - ***Push***: Sends our local changes to remote repository, and makes them available to others.
 
+## The Three States in Git (the stagine area concept)
 
-  
+Git manages your work through three local areas: <br>
+> > Working Directory  →  Staging Area  →  Repository (.git)
+     (edit)              (select)          (save permanently)
+
+1. **Working Directory**<br>
+This is actual folder on our computer, where we edit files, write code, deletes files, modify content.<br> Changes here are not yet recorded by Git, it only notices something is changed, does not save automatically. [ Changes not staged ]
+
+2. **Staging Area**<br>
+It is temporary holding area, here we decide exactly which changes should go into the next commit.<br> This gives us fine control over our commits, we can commit only part of our work and can group releated changes logically.
+
+3. **Repository (.git directory)** <br>
+This is like database where Git permanently store commits, this is hidden .git folder. After commiting  all changes are stored safely in Git history.
+
+
+
