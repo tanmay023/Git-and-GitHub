@@ -70,5 +70,50 @@
 
    * Interactive rebase to squash/edit/reword commits:
      > ` git  rebase -i HEAD~4`
-     - In the interactive 
-     
+     - In the interactive editor you can `pick`, `reward`, `squash`, `fixup`, `drop`, etc.
+   * Common rebase workflow before pushing:
+     > ` # keep feature up-to-date without merge commits` <br>
+	   ` git checkout feature/login` <br>
+	   ` git fetch origin` <br>
+	   ` git rebase origin/main` <br>
+	   ` # fix conflict if any : edit files, then`<br>
+	   ` git add <resolved-filed>`<br>
+	   ` git rebase --continue` <br>
+	   ` # if you want to abort the rebase:` <br>
+	   ` git rebase --abort`
+
+   Rebase conflict controls:
+   - Continue after resolving conflicts:
+     > ` git rebase --continue`
+
+   - Skip current patch:
+     > ` git rebase --skip`
+
+   - Abort and return to original branch state:
+     > ` git rebase --abort`
+
+  > Important: Do not rebase commit that you've already pushed and that others may have based on (rewriting published history causes problem). For local topic branches or before opening a PR, rebasing is safe and useful.
+
+
+6. Remote branches --- pushing, setting upstream, deleting
+
+   * Push a new branch and set its upstream ( to future `git push` and `git pull` default to origin/branch):
+     > ` git push -u origin feature/login`
+
+   * Push after a rebase (force push required because history changed):
+     > `git push --force-with-lease origin feature/login`
+     - Prefer `--force-with-lease` over `--force` ---- it's safer for concurrent work.
+
+   * Delete a remote branch:
+     > `git push origin --delete feature/login`
+
+7. Viewing branch relationshops and history
+   * See a compact graph of history:
+     > `git log --online --graph --decorate --all`
+
+   * Check which branch you are on:
+     > `git status`
+
+   * See upstream for the current branch:
+     > `git rev-parse --abbrev-ref --symbolic-full-name @{u} # show upstream ref (errors if none)` <br>
+	   `git branch -vv`
